@@ -11,8 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "people")
@@ -22,22 +21,16 @@ public class Person implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotEmpty(message = "no puede estar vacio")
 	@Column(nullable = false, unique = true)
 	private String identification;
-	@NotEmpty(message = "no puede estar vacio")
 	@Column(nullable = false)
 	private String fullName;
-	@NotEmpty(message = "no puede estar vacio")
 	@Column(nullable = false)
 	private Date birth;
-	@NotEmpty(message = "no puede estar vacio")
 	@Column(nullable = false)
 	private String gender; // M for male, F for female
-	@NotEmpty(message = "no puede estar vacio")
 	@Column(nullable = false)
 	private String fatherId;
-	@NotEmpty(message = "no puede estar vacio")
 	@Column(nullable = false)
 	private String motherId;
 	@Column(name = "create_at")
