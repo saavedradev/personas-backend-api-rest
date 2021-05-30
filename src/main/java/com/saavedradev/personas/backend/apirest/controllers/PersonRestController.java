@@ -140,9 +140,50 @@ public class PersonRestController {
 		}
 
 		response.put("mensaje", "La persona ha sido actualizado con éxito!");
-		response.put("cliente", personUpdate);
+		response.put("persona", personUpdate);
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);	
 	}
 	
+	
+	@PutMapping("/adopt/{id}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<?> adopt(@Valid @RequestBody Person person, BindingResult result, @PathVariable Long id) {
+		Person childPerson = personService.findById(id);
+		Person childUpdate = null;
+		Map<String, Object> response = new HashMap<>();
+		if(result.hasErrors()) {
+			List<String> errors = result.getFieldErrors()
+					.stream()
+					.map(err -> "El campo '"+ err.getField() +"' " +err.getDefaultMessage())
+					.collect(Collectors.toList());
+			response.put("errors", errors);
+			
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);	
+		}
+		if( childPerson == null) {
+			response.put("mensaje", "Error: no se puede adoptar, la persona con ID: ".concat(id.toString().concat(" no existe en la bd!")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);	
+		}
+		
+		try {
+			if(person.getGender().equals("M")) {
+				childPerson.setFatherId(person.getIdentification());
+			}
+			if(person.getGender().equals("F")) {
+				childPerson.setMotherId(person.getIdentification());		
+			}
+			childUpdate = personService.save(childPerson);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error al realizar el persona en la base de datos");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);	
+		}
+
+		
+		response.put("mensaje", "Ha sido adoptado");
+		response.put("child", childUpdate);
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);	
+		
+	}
 
 }
