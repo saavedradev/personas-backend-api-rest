@@ -14,6 +14,8 @@ public interface IPersonService {
 	
 	public void delete(Long id); 
 	
+	public Person findByIdentification(String id);
+	
 	
 
 }

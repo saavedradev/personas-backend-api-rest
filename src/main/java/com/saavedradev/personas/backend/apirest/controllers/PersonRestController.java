@@ -41,11 +41,11 @@ public class PersonRestController {
 	}
 
 	@GetMapping("/people/{id}")
-	public ResponseEntity<?> show(@PathVariable Long id) {
+	public ResponseEntity<?> show(@PathVariable String id) {
 		Person person = null;
 		Map<String, Object> response = new HashMap<>();
 		try {
-			person = personService.findById(id);
+			person = personService.findByIdentification(id);
 
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar la consulta en la base de datos");

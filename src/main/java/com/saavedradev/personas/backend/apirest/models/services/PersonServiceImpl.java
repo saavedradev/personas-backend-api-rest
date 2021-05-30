@@ -39,4 +39,10 @@ public class PersonServiceImpl implements IPersonService{
 		personDao.deleteById(id);
 	}
 
+	@Override
+	public Person findByIdentification(String id) {
+		// TODO Auto-generated method stub
+		return personDao.findByIdentification(id);
+	}
+
 }
