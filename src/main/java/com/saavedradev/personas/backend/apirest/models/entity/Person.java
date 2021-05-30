@@ -115,10 +115,6 @@ public class Person implements Serializable {
 		createAt = new Date();
 	}
 	
-	
-	public void adopt(Person child) {
-		
-	}
 
 	/**
 	 * 
