@@ -114,6 +114,11 @@ public class Person implements Serializable {
 	public void prePersist() {
 		createAt = new Date();
 	}
+	
+	
+	public void adopt(Person child) {
+		
+	}
 
 	/**
 	 * 

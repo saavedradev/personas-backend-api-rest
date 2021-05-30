@@ -1,0 +1,6 @@
+/home/eduardo/Documentos/sprintBoot/personas-backend-api-rest/src/main/java/com/saavedradev/personas/backend/apirest/PersonasBackendApiRestApplication.java
+/home/eduardo/Documentos/sprintBoot/personas-backend-api-rest/src/main/java/com/saavedradev/personas/backend/apirest/models/dao/IPersonDao.java
+/home/eduardo/Documentos/sprintBoot/personas-backend-api-rest/src/main/java/com/saavedradev/personas/backend/apirest/models/services/IPersonService.java
+/home/eduardo/Documentos/sprintBoot/personas-backend-api-rest/src/main/java/com/saavedradev/personas/backend/apirest/models/services/PersonServiceImpl.java
+/home/eduardo/Documentos/sprintBoot/personas-backend-api-rest/src/main/java/com/saavedradev/personas/backend/apirest/models/entity/Person.java
+/home/eduardo/Documentos/sprintBoot/personas-backend-api-rest/src/main/java/com/saavedradev/personas/backend/apirest/controllers/PersonRestController.java
