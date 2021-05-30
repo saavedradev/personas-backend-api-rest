@@ -1,7 +1,7 @@
 package com.saavedradev.personas.backend.apirest.models.services;
 
-import java.util.List;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,8 +18,25 @@ public class PersonServiceImpl implements IPersonService{
 	@Override
 	@Transactional(readOnly = true)
 	public List<Person> findAll() {
-		// TODO Auto-generated method stub
 		return (List<Person>) personDao.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Person findById(Long id) {
+		return personDao.findById(id).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public Person save(Person person) {
+		return personDao.save(person);
+	}
+
+	@Override
+	@Transactional
+	public void delete(Long id) {
+		personDao.deleteById(id);
 	}
 
 }
