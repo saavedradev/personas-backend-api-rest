@@ -54,7 +54,7 @@ public class PersonRestController {
 		}
 
 		if (person == null) {
-			response.put("mensaje", "La persona con ID: ".concat(id.toString().concat(" no existe en la bd!")));
+			response.put("mensaje", "La persona no existe en la bd");
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<Person>(person, HttpStatus.OK);
