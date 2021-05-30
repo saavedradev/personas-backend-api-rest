@@ -131,6 +131,7 @@ public class PersonRestController {
 			personActual.setFullName(person.getFullName());
 			personActual.setGender(person.getGender());
 			personActual.setMotherId(person.getMotherId());
+			personActual.setBirth(person.getBirth());
 			personUpdate = personService.save(personActual);
 		} catch (DataAccessException e) {
 			response.put("mensaje", "Error al realizar el persona en la base de datos");
