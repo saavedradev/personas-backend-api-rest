@@ -1,6 +1,0 @@
-com/saavedradev/personas/backend/apirest/models/dao/IPersonDao.class
-com/saavedradev/personas/backend/apirest/models/entity/Person.class
-com/saavedradev/personas/backend/apirest/controllers/PersonRestController.class
-com/saavedradev/personas/backend/apirest/PersonasBackendApiRestApplication.class
-com/saavedradev/personas/backend/apirest/models/services/IPersonService.class
-com/saavedradev/personas/backend/apirest/models/services/PersonServiceImpl.class
