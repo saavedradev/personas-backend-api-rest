@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.saavedradev.personas.backend.apirest.models.entity.Person;
 import com.saavedradev.personas.backend.apirest.models.services.IPersonService;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = { "*" })
 @RestController
 @RequestMapping("/api")
 public class PersonRestController {
