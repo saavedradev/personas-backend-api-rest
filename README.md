@@ -20,4 +20,4 @@ Prerrequisitos
 
 5. Configurar el password de la base de datos MySql del archivo application.properties. Ejemplo: spring.datasource.password=123
 
-6. Para ejecutar el 
+6. Para ejecutar el proyecto en el IDE spring Tool Suite 4. Ubicarse en el nombre del proyecto dar click derecho, seleccionar la opción Run As y luego dar click en Spring Boot App
